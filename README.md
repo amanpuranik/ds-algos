@@ -1,1 +1,1 @@
-this repo contains all my studying on data structures and algorithms 
+This repo contains all my studying on data structures and algorithms 
