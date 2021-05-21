@@ -16,9 +16,19 @@ class TreeNode:
     #recursion in use here
     def print_tree(self):
         print(self.data)
-        if self.children:
+        if self.children: #is next element exists
             for child in self.children:
                 child.print_tree()
+
+    #this method gets the lvl of the tree
+    def tree_level(self):
+        level = 0
+        p = self.parent
+        while p: #keep going through parent elements and increase level, while a parent exists going upward
+            level+=1
+            p = p.parent #goes up to the next parent element
+
+        return level
 
 
 def build_product_tree():
@@ -37,9 +47,16 @@ def build_product_tree():
     root.add_child(apple)
     root.add_child(mango) #this piece of code gives me the memory allocation
 
+    print(root.tree_level()) #the root of the tree is on level 0
+    print(apple.tree_level())
+
+
     root.print_tree()
 if __name__ == '__main__':
-    build_product_tree()
+    root = build_product_tree()
+    pass
+
+
 
 
 
